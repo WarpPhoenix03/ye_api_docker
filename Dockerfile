@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y libpq-dev
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-COPY. /app/
+COPY . /app/
 
 ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1

@@ -1,4 +1,4 @@
-FROM python:3.11-slim-buster
+FROM python:3.11.7-slim-buster
 
 WORKDIR /app
 
@@ -13,6 +13,6 @@ RUN apt-get update
 # install dependencies
 RUN pip install --upgrade pip
 #COPY requirements.txt /app/
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
 ENTRYPOINT ["gunicorn", "my_project.wsgi", "-b", "0.0.0.0:8000"]

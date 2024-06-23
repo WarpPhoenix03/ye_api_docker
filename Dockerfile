@@ -18,4 +18,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . /app
 
-ENTRYPOINT ["gunicorn", "core.wsgi", "-b", "0.0.0.0:8000"]
+ENTRYPOINT ["gunicorn", "my_project.wsgi", "-b", "0.0.0.0:8000"]

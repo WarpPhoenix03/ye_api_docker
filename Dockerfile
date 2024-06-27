@@ -6,13 +6,10 @@ ENV PYTHONDONTWRITEBYTECODE 1
 
 COPY ./requirements.txt /app/
 # install system dependencies
-RUN apt-get update
-RUN apt-get update && apt-get install -y libpq-dev
-RUN apt-get install -y build-essential
+RUN apt-get update && apt-get install -y libpq-dev build-essential
 
 # install dependencies
-RUN pip install --upgrade pip
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
 
 COPY . /app
 

@@ -15,9 +15,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
+from django.views.generic import RedirectView
 from api import views
 
 urlpatterns = [
     path('api/songs/', views.get_song, name='get_song'),
+    re_path(r'^(?!api/songs/).*$', RedirectView.as_view(url='/api/songs', permanent=True)),
 ]
